@@ -1,5 +1,6 @@
 package com.sam.todolist2.controller;
 
+import com.sam.todolist2.model.dao.TodoDao;
 import com.sam.todolist2.model.entity.Todo;
 import com.sam.todolist2.service.TodoService;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -33,7 +34,6 @@ public class controllerTest {
 
     @MockBean
     TodoService todoService;
-
 
     @Test
     public void testGetTodos() throws Exception {
@@ -84,7 +84,6 @@ public class controllerTest {
                 .andReturn().getResponse().getContentAsString();
 
         assertEquals(1, Integer.parseInt(actual));
-
     }
 
     @Test
