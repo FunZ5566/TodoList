@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TodoList2Application {
 
     public static void main(String[] args) {
+
         SpringApplication.run(TodoList2Application.class, args);
     }
 

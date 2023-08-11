@@ -1,0 +1,14 @@
+# 取得一筆代辦事項
+GET http://localhost:9100/api/todos
+Content-Type: application/json
+
+###
+
+# 新增一筆代辦事項
+POST http://localhost:9100/api/todos
+Content-Type: application/json
+
+{
+  "id": 1,
+  "task":"寫文章"
+}

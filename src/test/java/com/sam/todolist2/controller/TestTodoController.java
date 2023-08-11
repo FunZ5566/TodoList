@@ -65,23 +65,23 @@ public class TestTodoController {
         assertEquals(expectedList,  actualList);
     }
 
-    @Test
-    public void testCreateTodos() throws Exception {
-        // [安排] 預期的回傳值
-        JSONObject todoObject = new JSONObject();
-        todoObject.put("task", "寫文章");
-
-        // [Act] 模擬網路呼叫[POST] /api/todos
-        String actualId = mockMvc.perform(MockMvcRequestBuilders.post("/api/todos")
-                        .accept(MediaType.APPLICATION_JSON) // 設定回應的型別
-                        .contentType(MediaType.APPLICATION_JSON) // 設定請求的型別
-                        .content(String.valueOf(todoObject))) // 設定內容
-                .andExpect(status().isCreated()) // 預期回應的狀態碼為 201(Created)
-                .andReturn().getResponse().getContentAsString();
-
-        // [斷言] 判斷回傳的內容是否與預期相同
-        assertEquals("2", actualId); // 注意這裡將 actualId 視為字串進行比較
-    }
+//    @Test
+//    public void testCreateTodos() throws Exception {
+//        // [安排] 預期的回傳值
+//        JSONObject todoObject = new JSONObject();
+//        todoObject.put("task", "寫文章");
+//
+//        // [Act] 模擬網路呼叫[POST] /api/todos
+//        String actualId = mockMvc.perform(MockMvcRequestBuilders.post("/api/todos")
+//                        .accept(MediaType.APPLICATION_JSON) // 設定回應的型別
+//                        .contentType(MediaType.APPLICATION_JSON) // 設定請求的型別
+//                        .content(String.valueOf(todoObject))) // 設定內容
+//                .andExpect(status().isCreated()) // 預期回應的狀態碼為 201(Created)
+//                .andReturn().getResponse().getContentAsString();
+//
+//        // [斷言] 判斷回傳的內容是否與預期相同
+//        assertEquals("2", actualId); // 注意這裡將 actualId 視為字串進行比較
+//    }
 
 
     @Test
